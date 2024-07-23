@@ -104,7 +104,11 @@ App UI
                     </div>
                 </div>
             </div>
-remember to change config in tailwind
+
+## remember to change config in tailwind
+
+```javascript
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
