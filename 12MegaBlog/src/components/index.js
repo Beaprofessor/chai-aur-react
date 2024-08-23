@@ -6,8 +6,8 @@ import LogoutBtn from "./Header/LogoutBtn";
 import RTE from "./RTE";
 import Select from "./Select"
 import Signup from "../pages/Signup";
+import Input from "./Input"
 import Login from "../pages/Login";
-import Post from "../pages/AddPost"
 import PostForm from "../components/post-form/PostForm"
 import PostCard from "./PostCard"
 import AuthLayout from "./AuthLayout"
@@ -20,9 +20,9 @@ export {
     LogoutBtn,
     RTE,
     Select,
+    Input,
     Signup,
     Login,
-    Post,
     PostForm,
     PostCard,
     AuthLayout
