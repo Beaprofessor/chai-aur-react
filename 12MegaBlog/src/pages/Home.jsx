@@ -1,19 +1,18 @@
-import React , {useState , useEffect} from 'react'
-import appwriteService from "../appwrite/config"
-import {Container , PostCard} from "../components"
-
+import React, {useEffect, useState} from 'react'
+import appwriteService from "../appwrite/config";
+import {Container, PostCard} from '../components'
 
 function Home() {
-    const [posts , setPosts] = useState([])
+    const [posts, setPosts] = useState([])
 
-    useEffect(()=>{
+    useEffect(() => {
         appwriteService.getPosts().then((posts) => {
-            if(posts){
+            if (posts) {
                 setPosts(posts.documents)
             }
         })
-    } , [])
-    
+    }, [])
+  
     if (posts.length === 0) {
         return (
             <div className="w-full py-8 mt-4 text-center">
@@ -29,23 +28,19 @@ function Home() {
             </div>
         )
     }
-    
-
     return (
         <div className='w-full py-8'>
             <Container>
                 <div className='flex flex-wrap'>
-                    {posts.map((posts) => {
-                        <div key={posts.$id} className='p-2 w-1/4'>
-                            <PostCard {...posts}/>
+                    {posts.map((post) => (
+                        <div key={post.$id} className='p-2 w-1/4'>
+                            <PostCard {...post} />
                         </div>
-                    })}
-
+                    ))}
                 </div>
             </Container>
         </div>
     )
-    
 }
 
 export default Home
